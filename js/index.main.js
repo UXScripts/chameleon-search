@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   
   chameleon.widget({  
@@ -67,7 +66,9 @@ $(document).ready(function() {
     
     //Triggered when the user taps the refresh button on the widget title bar.
     onRefresh: function() {
-              
+      if (chameleon.devMode()) {
+        gecko.reloadWidget();
+      }
     },
     
     //Triggered every time the widget loads, but not in Chameleon.        
