@@ -55,7 +55,9 @@ $(document).ready(function() {
     
     //Triggered when the user taps the configure button in the widget title bar.
     onConfigure: function() {
-      chameleon.promptHTML({url:"settings.html"});
+      if (chameleon.connected()) {
+        chameleon.promptHTML({url:"settings.html"});
+      }
     },
     
     
@@ -66,7 +68,7 @@ $(document).ready(function() {
     
     //Triggered when the user taps the refresh button on the widget title bar.
     onRefresh: function() {
-      if (chameleon.devMode()) {
+      if (chameleon.devMode() && chameleon.connected()) {
         gecko.reloadWidget();
       }
     },

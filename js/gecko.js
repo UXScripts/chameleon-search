@@ -34,10 +34,10 @@ var gecko = (function () {
   // If the entry doesn't exist, the default value will be returned.
   me.getInstanceData = function(key, def) {
     var data = _getInstanceData(); 
-    if (data[key]) {
+    if (_.has(data, key)) {
       return data[key];
     }
-    if (def) {
+    if (def !== undefined) {
       return def;
     }
     return null;
