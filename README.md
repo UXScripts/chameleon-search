@@ -1,4 +1,4 @@
-chameleon-template
+chameleon-search
 ==================
 
-Modified version of the developer template for creating Chameleon widgets.
+Chameleon Launcher widget that lets you search the Internet using various search engines.
