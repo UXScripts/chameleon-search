@@ -1,0 +1,85 @@
+body, html, #chameleon-widget {
+  width: 100%;
+  height: 100%;
+}
+
+input[type="text"], #left, #right {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#left {
+  float: left;
+  width: 80%;
+  margin: 10px 0 0;
+  padding-right: 20px;  
+}
+
+input#search-box {
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-bottom-color: #0099cc;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 7px 8px 7px 8px;
+  background-image: url(http://chameleonlauncher.com/widgets/common/images/html_textfield_lrbordernub.png), url(http://chameleonlauncher.com/widgets/common/images/html_textfield_lrbordernub.png);
+  background-position: -0.3% 104%, 100.5% 104%; 
+  background-repeat: no-repeat; 
+  width: 100%;
+  color: #fff;
+}
+
+input#search-box:focus {
+  border-bottom-color: #0099cc;
+}
+
+#right {
+  float: right;
+  width: 20%;
+  margin: 10px 0 0;
+}
+
+#search-button {
+  display: block;
+  padding: 12px 0;
+  background-color: rgba(255,255,255,0.205);
+  border-top: 1px solid rgba(255,255,255,0.34);
+  border-right: 1px solid rgba(0,0,0,0.04);
+  border-bottom: 1px solid rgba(0,0,0,0.43);
+  border-left: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+  border-radius: 1px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+label.checkbox-label {
+  text-transform: none !important;
+  font-size: 12px !important;
+}
+
+label.checkbox-label input[type="checkbox"] {
+  display: inline;
+  float: left;
+}
+
+#chameleon-widget-settings a.done.half:first-child {
+  width: 46%;
+  right: auto;
+  left: 2%;
+  bottom: 2%;
+  padding: 12px 0;
+}
+
+#chameleon-widget-settings a.done.half:last-child {
+  width: 47%;
+  left: auto;
+  right: 2%;
+  bottom: 2%;
+  padding: 12px 0;
+}
+

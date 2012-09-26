@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <manifest xmlns="http://chameleonlauncher.com/widgets">
-  <!-- About the widget -->
   <widget>
-    <guid>com.matthewtole.chameleon.search</guid> <!-- A unique id -->
-    <baseURL>http://matthewtole.com/chameleon/search/</baseURL> <!-- your base url -->
-    <name>Web Search</name> <!-- title that users will see as the name of the widget -->
-    <description>Search the web using a variety of search engines.</description> <!-- a detailed description of the widget -->
-    <version>0.0.1</version> <!-- the version number of your widget -->
+    <guid>com.matthewtole.chameleon.search</guid> 
+    <baseURL>http://matthewtole.com/chameleon/search/</baseURL> 
+    <name>Web Search</name> 
+    <description>Search the web using a variety of search engines.</description> 
+    <version>0.0.1</version> 
   </widget>  
-  <!-- Style info -->
   <style>
     <icons>
-      <large>images/icon.png</large> <!-- displayed on the title bar and in the widget list -->
+      <large>images/icon.png</large> 
     </icons>
-    <color>#000000</color> <!-- The color applied to the widget's chrome -->
-    <showTitleBar>true</showTitleBar> <!-- hide the title bar if false -->
-    <showBackgroundShadow>true</showBackgroundShadow> <!-- hide theshadow behind the widget if false -->
-    <allowRefresh>false</allowRefresh> <!-- display a refresh button on the title bar -->
-    <allowConfigure>true</allowConfigure> <!-- display a refresh button on the title bar -->
+    <color>#000000</color> 
+    <showTitleBar>true</showTitleBar> 
+    <showBackgroundShadow>true</showBackgroundShadow> 
+    <allowRefresh>false</allowRefresh> 
+    <allowConfigure>true</allowConfigure> 
   </style>
-  <!-- About who created the widget, and how to contact them -->
   <author>
     <name>Matthew Tole</name>
     <website>http://matthewtole.com/</website>
@@ -27,15 +24,11 @@
     <support type="email">chameleon@matthewtole.com</support>
     <support type="URL">http://matthewtole.com/chameleon/</support>
   </author>
-  <!-- 
-    - A list of all files required to run this widget offline
-      - Only files that a required for a first run offline are required.
-        - If a widget requires a network connection, only include the assets required to tell the user they need a connection.
-      - Assets not included will be cached on demand.
-   -->
   <resources>
     <resource name='index.html' />
     <resource name='settings.html' />
+    <resource name='js/underscore-min.js' />
+    <resource name='js/ICanHaz.js' />
     <resource name='js/gecko.js' />
     <resource name='js/index.main.js' />
     <resource name='js/settings.main.js' />

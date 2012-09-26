@@ -1,83 +1,77 @@
 $(document).ready(function() {
+
+  var WIDGET = $('#chameleon-widget');
   
-  chameleon.widget({  
-    
-    //Triggered every time the widget loads.
+  var settings = {
+    _keys: {
+      engine: 'search-engine',
+      popup: 'search-popup'
+    },
+    _defaults: {
+      engine: 'google',
+      popup: false
+    }
+  };
+
+  chameleon.widget({
     onLoad: function() {
-      $("#chameleon-widget").html("This is a template for building widgets.");
+      renderWidget();
     },
-    
-    //Triggered the first time the widget is created.
-    onCreate: function() {
-    
-    },
-    
-    //Triggered everytime Chameleon resumes  (comes back into focus).        
     onResume: function() {
-
+      renderWidget();
     },
-    
-    //Triggered every time Chameleon pauses (goes out of focus).
-    onPause: function() {
-
-    },
-    
-    //Triggered every time the size of the widget changes.
-    onLayout: function() {
-  
-    },
-    
-    //Triggered when the user scrolls the widget to it's top.
-    onScrollTop: function() {
-
-    },
-    
-    //Triggered when the user scrolls the widget away from it's top.
-    onScrollElsewhere: function() {
-
-    },
-    
-    //Triggered when the user enters dashboard edit mode.
-    onLayoutModeStart: function() {
-          
-      
-    },
-    
-    //Triggered when the user exits dashboard edit mode.
-    onLayoutModeComplete: function() {
-
-    },
-    
-    //Triggered when the status of network availability changes.
-    onConnectionAvailableChanged: function(available) {
-
-    },
-    
-    //Triggered when the user taps the configure button in the widget title bar.
     onConfigure: function() {
       if (chameleon.connected()) {
-        chameleon.promptHTML({url:"settings.html"});
+        chameleon.promptHTML({
+          url: 'settings.html', 
+          result: function(success) {
+            if (success) {
+              renderWidget();
+            }
+          }
+        });
       }
     },
-    
-    
-    //Triggered when the user taps the widget titlebar.
-    onTitleBar: function() {
-
-    },
-    
-    //Triggered when the user taps the refresh button on the widget title bar.
     onRefresh: function() {
       if (chameleon.devMode() && chameleon.connected()) {
         gecko.reloadWidget();
       }
     },
-    
-    //Triggered every time the widget loads, but not in Chameleon.        
     notChameleon: function() {
-      $("#chameleon-widget").html("This is a template for building widgets");  
+      if (window.location.hash == '#testing') {
+        WIDGET.addClass('debug');
+        renderWidget();
+      }
+      else {
+        window.location = '/chameleon/about/#search';
+      }
     },
-    
+  });
+
+  function loadSettings() {
+    _.each(settings._keys, function(key, name) {
+      settings[name] = gecko.getInstanceData(key, settings._defaults[name]);
+    });
+  }
+
+  function renderWidget() {
+    loadSettings();
+    WIDGET.html(ich.search_widget({ 
+      placeholder: engines[settings.engine].placeholder 
+    }));
+  }
+
+  WIDGET.on('click', '#search-button', function() {
+    var query = $('#search-box').val();
+    if (query.length > 0) {
+      var url = engines[settings.engine].query.replace('%QUERY', query);
+      if (settings.popup) {
+        chameleon.promptHTML({ url: url });
+      }
+      else {
+        gecko.openUrl(url);
+      }
+    }
   });
 
 });
