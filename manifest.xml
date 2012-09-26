@@ -2,11 +2,11 @@
 <manifest xmlns="http://chameleonlauncher.com/widgets">
   <!-- About the widget -->
   <widget>
-    <guid>com.matthewtole.chameleon.template</guid> <!-- A unique id -->
-    <baseURL>http://matthewtole.com/chameleon/template/</baseURL> <!-- your base url -->
-    <name>Matthew Tole's Template</name> <!-- title that users will see as the name of the widget -->
-    <description>Matthew Tole's modified blank template for making widgets</description> <!-- a detailed description of the widget -->
-    <version>0.0.0</version> <!-- the version number of your widget -->
+    <guid>com.matthewtole.chameleon.search</guid> <!-- A unique id -->
+    <baseURL>http://matthewtole.com/chameleon/search/</baseURL> <!-- your base url -->
+    <name>Web Search</name> <!-- title that users will see as the name of the widget -->
+    <description>Search the web using a variety of search engines.</description> <!-- a detailed description of the widget -->
+    <version>0.0.1</version> <!-- the version number of your widget -->
   </widget>  
   <!-- Style info -->
   <style>
@@ -16,7 +16,7 @@
     <color>#000000</color> <!-- The color applied to the widget's chrome -->
     <showTitleBar>true</showTitleBar> <!-- hide the title bar if false -->
     <showBackgroundShadow>true</showBackgroundShadow> <!-- hide theshadow behind the widget if false -->
-    <allowRefresh>true</allowRefresh> <!-- display a refresh button on the title bar -->
+    <allowRefresh>false</allowRefresh> <!-- display a refresh button on the title bar -->
     <allowConfigure>true</allowConfigure> <!-- display a refresh button on the title bar -->
   </style>
   <!-- About who created the widget, and how to contact them -->
