@@ -18,10 +18,10 @@ $(document).ready(function() {
       renderWidget();
     },
     onResume: function() {
-      //renderWidget();
+      renderWidget();
     },
     onLayout: function() {
-      //resizeWidget();
+      resizeWidget();
     },
     onConfigure: function() {
       if (chameleon.connected()) {

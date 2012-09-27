@@ -5,7 +5,7 @@
     <baseURL>http://matthewtole.com/chameleon/search/</baseURL> 
     <name>Web Search</name> 
     <description>Search the web using a variety of search engines.</description> 
-    <version>0.0.2</version> 
+    <version>0.0.3</version> 
   </widget>  
   <style>
     <icons>

@@ -8,6 +8,11 @@ The latest version of the widget can be found at <http://matthewtole.com/chamele
 ### Supported Search Engines
 * Google
 * Google (UK)
+* Wikipedia
+* IMDB
+* Google Images
+* YouTube
+* Bing
 
-### Screenshots 0.0.1
-![](http://matthewtole.com/chameleon/screenshots/search-0.0.1.jpg)
+### Screenshots 0.0.3
+![](http://matthewtole.com/chameleon/screenshots/search-0.0.3.jpg)
