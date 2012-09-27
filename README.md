@@ -15,4 +15,4 @@ The latest version of the widget can be found at <http://matthewtole.com/chamele
 * Bing
 
 ### Screenshots 0.0.3
-![](http://matthewtole.com/chameleon/screenshots/search-0.0.3.jpg)
+![](http://matthewtole.com/chameleon/screenshots/search-0.0.3.png)
