@@ -13,23 +13,18 @@ input[type="text"], #left, #right {
   float: left;
   width: 80%;
   margin: 10px 0 0;
-  padding-right: 20px;  
+  padding-right: 10px;  
 }
 
 input#search-box {
-  background-color: transparent;
-  border: 2px solid transparent;
-  border-bottom-color: #0099cc;
-  border-radius: 0;
-  font-family: inherit;
-  font-size: 18px;
-  line-height: 18px;
-  padding: 7px 8px 7px 8px;
-  background-image: url(http://chameleonlauncher.com/widgets/common/images/html_textfield_lrbordernub.png), url(http://chameleonlauncher.com/widgets/common/images/html_textfield_lrbordernub.png);
-  background-position: -0.3% 104%, 100.5% 104%; 
-  background-repeat: no-repeat; 
+  background-color: #fff;
+  color: #222;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 8px;
+  border: 0;
   width: 100%;
-  color: #fff;
 }
 
 input#search-box:focus {
@@ -44,17 +39,44 @@ input#search-box:focus {
 
 #search-button {
   display: block;
-  padding: 12px 0;
-  background-color: rgba(255,255,255,0.205);
-  border-top: 1px solid rgba(255,255,255,0.34);
-  border-right: 1px solid rgba(0,0,0,0.04);
-  border-bottom: 1px solid rgba(0,0,0,0.43);
-  border-left: 1px solid rgba(0,0,0,0.04);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.25);
-  border-radius: 1px;
+  background-color: #4D90FE;
+  background-image: -webkit-linear-gradient(top, #4D90FE, #4787ED);
+  border:1px solid #3079ed;
+  border-radius: 3px;
   color: white;
-  text-decoration: none;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 16px;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  padding: 10px;
   text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#search-button.fulltext span {
+  display: inline;
+}
+
+#search-button.fulltext img {
+  display: none;
+}
+
+#search-button:not(.fulltext) span {
+  display: none;
+}
+
+#search-button:not(.fulltext) img {
+  display: inline;
+  width: 22px; 
+  height: 22px;
+}
+
+#search-button:not(.fulltext) {
+  padding: 6px;
 }
 
 label.checkbox-label {

@@ -18,7 +18,10 @@ $(document).ready(function() {
       renderWidget();
     },
     onResume: function() {
-      renderWidget();
+      //renderWidget();
+    },
+    onLayout: function() {
+      //resizeWidget();
     },
     onConfigure: function() {
       if (chameleon.connected()) {
@@ -55,22 +58,46 @@ $(document).ready(function() {
   }
 
   function renderWidget() {
+    var oldText = $('#search-box').val();
+    var focus = $('#search-box').is(":focus");
     loadSettings();
     WIDGET.html(ich.search_widget({ 
       placeholder: engines[settings.engine].placeholder 
     }));
+    $('#search-box').val(oldText);
+    resizeWidget();
+    if (focus) {
+      $('#search-box').focus();
+    }
+  }
+
+  function resizeWidget() {
+    if ($('#search-button', WIDGET).width() < 50) {
+      $('#search-button', WIDGET).removeClass('fulltext');
+    }
+    else {
+      $('#search-button', WIDGET).addClass('fulltext');
+    }
   }
 
   WIDGET.on('click', '#search-button', function() {
     var query = $('#search-box').val();
     if (query.length > 0) {
       var url = engines[settings.engine].query.replace('%QUERY', query);
+      $('#search-box').val('');
       if (settings.popup) {
         chameleon.promptHTML({ url: url });
       }
       else {
         gecko.openUrl(url);
       }
+    }
+  });
+
+  WIDGET.on('keyup', '#search-box', function(e) {
+    if (e.which === 13) {
+      $('#search-button', WIDGET).click();
+      return false;
     }
   });
 

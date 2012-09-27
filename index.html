@@ -19,10 +19,13 @@
     <div id="chameleon-widget"></div>    
     <script id="search_widget" type="text/html">
       <div id="left">
-        <input type="text" id="search-box" placeholder=" {{ placeholder }}" />
+        <input type="text" id="search-box" placeholder="{{ placeholder }}" class="input-xlarge search-query" />
       </div>
       <div id="right">
-        <a href="#" id="search-button">Search</a>
+        <a href="#" id="search-button" class="fulltext">
+          <span>Search</span>
+          <img src="images/icon_search.png" />
+        </a>
       </div>
     </script>
   </body>
