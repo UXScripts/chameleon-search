@@ -29,7 +29,7 @@
     <resource name='settings.html' />
     <resource name='js/underscore-min.js' />
     <resource name='js/ICanHaz.js' />
-    <resource name='js/gecko.js' />
+    <resource name='js/gecko/gecko.js' />
     <resource name='js/index.main.js' />
     <resource name='js/settings.main.js' />
     <resource name='css/widget.css' />

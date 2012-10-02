@@ -1,0 +1,3 @@
+[submodule "js/gecko"]
+	path = js/gecko
+	url = git://github.com/matthewtole/chameleon-gecko.git
