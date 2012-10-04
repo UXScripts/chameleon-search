@@ -11,9 +11,8 @@ input[type="text"], #left, #right {
 
 #left {
   float: left;
-  width: 80%;
-  margin: 10px 0 0;
-  padding-right: 10px;  
+  width: 100px;
+  margin: 10px 10px 0 0;  
 }
 
 input#search-box {
@@ -33,11 +32,11 @@ input#search-box:focus {
 
 #right {
   float: right;
-  width: 20%;
   margin: 10px 0 0;
 }
 
-#search-button {
+.button {
+  float: left;
   display: block;
   background-color: #4D90FE;
   background-image: -webkit-linear-gradient(top, #4D90FE, #4787ED);
@@ -51,31 +50,36 @@ input#search-box:focus {
   list-style-image: none;
   list-style-position: outside;
   list-style-type: none;
-  padding: 10px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  margin-right: 10px;
 }
 
-#search-button.fulltext span {
+.button:last-child {
+  margin-right: 0;
+}
+
+.button span {
   display: inline;
 }
 
-#search-button.fulltext img {
+.button img {
   display: none;
 }
 
-#search-button:not(.fulltext) span {
+.button.tiny span {
   display: none;
 }
 
-#search-button:not(.fulltext) img {
+.button.tiny img {
   display: inline;
   width: 22px; 
   height: 22px;
 }
 
-#search-button:not(.fulltext) {
+.button.tiny {
   padding: 6px;
 }
 

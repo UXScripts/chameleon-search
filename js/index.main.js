@@ -64,6 +64,7 @@ $(document).ready(function() {
     WIDGET.html(ich.search_widget({ 
       placeholder: engines[settings.engine].placeholder 
     }));
+    gecko.setTitle('Web Search | ' + engines[settings.engine].title);
     $('#search-box').val(oldText);
     resizeWidget();
     if (focus) {
@@ -72,11 +73,11 @@ $(document).ready(function() {
   }
 
   function resizeWidget() {
-    if ($('#search-button', WIDGET).width() < 50) {
-      $('#search-button', WIDGET).removeClass('fulltext');
-    }
-    else {
-      $('#search-button', WIDGET).addClass('fulltext');
+    $('#search-button').removeClass('tiny');
+    $('#left').width(WIDGET.width() - $('#right').width() - 10);
+    if ($('#search-box').width() < 200) {
+      $('#search-button').addClass('tiny');
+      $('#left').width(WIDGET.width() - $('#right').width() - 10);
     }
   }
 
@@ -92,6 +93,16 @@ $(document).ready(function() {
         gecko.openUrl(url);
       }
     }
+  });
+
+  WIDGET.on('click', '#voice-button', function() {
+    chameleon.intent({
+      component:{
+        package:"com.google.android.voicesearch",
+        name: "com.google.android.voicesearch.RecognitionActivity"
+      },
+      action:"android.speech.action.WEB_SEARCH"
+    });
   });
 
   WIDGET.on('keyup', '#search-box', function(e) {

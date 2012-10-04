@@ -35,5 +35,6 @@
     <resource name='css/widget.css' />
     <resource name='images/icon.png' />
     <resource name='images/icon_search.png' />
+    <resource name='images/icon_voice.png' />
   </resources>
 </manifest>
