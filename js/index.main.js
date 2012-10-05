@@ -1,17 +1,30 @@
+var SearchComponents = {
+  'jellybean': {
+    package:'com.google.android.googlequicksearchbox',
+    name: 'com.google.android.googlequicksearchbox.VoiceSearchActivity'
+  },
+  'ics': {
+    package:'com.google.android.voicesearch',
+    name: 'com.google.android.voicesearch.RecognitionActivity'
+  }
+};
+
+var WIDGET = null;
+
+var settings = {
+  _keys: {
+    engine: 'search-engine',
+    popup: 'search-popup'
+  },
+  _defaults: {
+    engine: 'google',
+    popup: false
+  }
+};
+
 $(document).ready(function() {
 
-  var WIDGET = $('#chameleon-widget');
-  
-  var settings = {
-    _keys: {
-      engine: 'search-engine',
-      popup: 'search-popup'
-    },
-    _defaults: {
-      engine: 'google',
-      popup: false
-    }
-  };
+  WIDGET = $('#chameleon-widget');
 
   chameleon.widget({
     onLoad: function() {
@@ -59,7 +72,7 @@ $(document).ready(function() {
 
   function renderWidget() {
     var oldText = $('#search-box').val();
-    var focus = $('#search-box').is(":focus");
+    var focus = $('#search-box').is(':focus');
     loadSettings();
     WIDGET.html(ich.search_widget({ 
       placeholder: engines[settings.engine].placeholder 
@@ -96,13 +109,19 @@ $(document).ready(function() {
   });
 
   WIDGET.on('click', '#voice-button', function() {
-    chameleon.intent({
-      component:{
-        package:"com.google.android.voicesearch",
-        name: "com.google.android.voicesearch.RecognitionActivity"
-      },
-      action:"android.speech.action.WEB_SEARCH"
-    });
+    
+    if (chameleon.componentExists(SearchComponents.jellybean)) {
+      return chameleon.intent({
+        component: SearchComponents.jellybean,
+        action: 'android.speech.action.WEB_SEARCH'
+      });
+    }
+    if (chameleon.componentExists(SearchComponents.ics)) {
+      return chameleon.intent({
+        component: SearchComponents.ics,
+        action: 'android.speech.action.MAIN'
+      });
+    }
   });
 
   WIDGET.on('keyup', '#search-box', function(e) {
